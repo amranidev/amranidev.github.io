@@ -22,20 +22,35 @@
                 </ul>
             </div>
         </nav>
-        <div class = 'container'>
-            <h1>Amranidev web page Welcome</h1>
-        </div>
+
+            <div class="parallax-container">
+                <div class="parallax"><img src="img/photo3.jpg"></div>
+            </div>
+            <div class="section white">
+                <div class="row container">
+                    <h2 class="header">Web page</h2>
+                    <p class="grey-text text-darken-3 lighten-3">This is my web page to represent my repositories in github.</p>
+                 <br><br><br><br><br>
+                 <br><br><br><br><br>
+                 <br><br><br><br><br>
+                 <br><br><br><br><br>
+                 <br><br><br><br><br>
+                </div>
+            </div>
+            <div class="parallax-container">
+                <div class="parallax"><img src="img/photo5.jpg"></div>
+            </div>
         <footer class="page-footer blue">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
                         <h5 class="white-text">Projects</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Ajaxis</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">algoheader</a></li>
                             <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
                         </ul>
-                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                        <p class="grey-text text-lighten-4">Amrani Houssain amranidev@gmail.com</p>
                     </div>
                     <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">Connect</h5>
@@ -62,17 +77,20 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script>window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-        t._e = [];
-        t.ready = function(f) {
-            t._e.push(f);
-        };
-        return t;
-    }(document, "script", "twitter-wjs"));</script>
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    t = window.twttr || {};
+                if (d.getElementById(id)) return t;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                t._e = [];
+                t.ready = function(f) {
+                    t._e.push(f);
+                };
+                return t;
+            }(document, "script", "twitter-wjs"));
+            $(document).ready(function(){
+            $('.parallax').parallax();
+    });</script>
 </html>
