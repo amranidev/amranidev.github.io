@@ -16,7 +16,7 @@
                     <a href="" class="brand-logo">Amranidev</a>
                 </div>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href=""><i class = 'material-icons'>home</i></a></li>
+                    <li><a href="index.html"><i class = 'material-icons'>home</i></a></li>
                     <li><a href=""><i class = 'material-icons'>work</i></a></li>
                     <li><a href=""><i class = 'material-icons'>face</i></a></li>
                 </ul>
@@ -29,8 +29,6 @@
             <div class="row container">
                 <h2 class="header">Web page</h2>
                 <p  class="grey-text text-darken-3 lighten-3">This is my web page to represent my repositories in github.</p>
-
-
                 <div class="col s12 m8 offset-m2 l6 offset-l3">
                     <div class="card-panel grey lighten-5 z-depth-1">
                         <div class="row valign-wrapper">
@@ -59,9 +57,13 @@
                     <div class="col l6 s12">
                         <h5 class="white-text">Projects</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">Ajaxis</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">
+                                <ul>
+                                    <h6>Ajaxis</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=ajaxis&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                                </ul>
+                                </a>
+                            </li>
                             <li><a class="grey-text text-lighten-3" href="#!">algoheader</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
                         </ul>
                         <p class="grey-text text-lighten-4">Amrani Houssain amranidev@gmail.com</p>
                     </div>
@@ -90,20 +92,20 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script>window.twttr = (function(d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0],
-                                t = window.twttr || {};
-                            if (d.getElementById(id)) return t;
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = "https://platform.twitter.com/widgets.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                            t._e = [];
-                            t.ready = function(f) {
-                                t._e.push(f);
-                            };
-                            return t;
-                        }(document, "script", "twitter-wjs"));
-                        $(document).ready(function(){
-                        $('.parallax').parallax();
+                                                var js, fjs = d.getElementsByTagName(s)[0],
+                                                    t = window.twttr || {};
+                                                if (d.getElementById(id)) return t;
+                                                js = d.createElement(s);
+                                                js.id = id;
+                                                js.src = "https://platform.twitter.com/widgets.js";
+                                                fjs.parentNode.insertBefore(js, fjs);
+                                                t._e = [];
+                                                t.ready = function(f) {
+                                                    t._e.push(f);
+                                                };
+                                                return t;
+                                            }(document, "script", "twitter-wjs"));
+                                            $(document).ready(function(){
+                                            $('.parallax').parallax();
     });</script>
 </html>
