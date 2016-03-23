@@ -3,10 +3,8 @@
 	<head>
 		<meta charset = "utf-8">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!--Import materialize.css-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 		<link rel = 'stylesheet' href = "http://materializecss.com/css/prism.css">
-		<link rel="stylesheet" href="../style/amranidev-21546.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>scaffoldinterface | Docs</title>
 	</head>
@@ -30,58 +28,93 @@
 			</div>
 		</nav>
 		<div class="container">
-			<!-- TEST -->
-			<div class="markdown-body">
-				
-				<h1 id="scaffold-interface">scaffold-interface</h1>
+			<div class = 'markdown-body'>
+				<h1><a id="Scaffoldinterface_0"></a>Scaffold-interface</h1>
 				<p>Welcome to the scaffold-interface documentation. This is a work in progress and will be continuously updated. Pull requests are welcome so if you would like to contribute, <a href="https://github.com/amranidev/scaffold-interface">please fork me on GitHub</a>.</p>
-				<h3 id="what-is-scaffold-interface"><a href=""  class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is scaffold-interface</h3>
-				<p>scaffold-interface is a smart CRUD generator for Laravel that generate your models,views,controllers and One-To-Many relationships just in few clicks. with elegant design and template specification for views. </p>
-				<h3 id="requirements">Requirements</h3>
+				<h3 class = 'thin'><a id="What_is_scaffoldinterface_5"></a>What is scaffold-interface</h3>
+				<p>scaffold-interface is a smart CRUD generator for Laravel that generate your models,views,controllers and One-To-Many relationships just in few clicks. with elegant design and template specification for views.</p>
+				<h3 class = 'thin'><a id="Requirements_9"></a>Requirements</h3>
 				<ul>
-					<li>php &gt;= 5.5.0</li>
+					<li>php  &gt;=  5.5.0</li>
 				</ul>
-			</div>
-			<!-- TEST END -->
-		</div>
-		<footer class="page-footer #212121 grey darken-4">
-			<div class="container">
-				<div class="row">
-					<div class="col l6 s12">
-						<h5 class="white-text">Projects</h5>
-						<ul>
-							<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/ajaxis">
-								<ul>
-									<h6>Ajaxis</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=ajaxis&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-								</ul>
-							</a>
-						</li>
-						<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/scaffold-interface">
-							<ul>
-								<h6>Scaffold-Interface</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=scaffold-interface&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-							</ul>
-						</a>
+				<h3 class = 'thin'><a id="Getting_Started_14"></a>Getting Started</h3>
+				<h4 class = 'thin'><a id="Installation_16"></a>Installation</h4>
+				<ol>
+					<li>
+						<p>Add scaffold-interface to your composer.json file to require Scaffold-Interface :</p>
+						<pre>
+
+require: {
+   "laravel/framework": "5.2.*",
+  "Amranidev/scaffold-interface": "v1.3.*"
+   }
+
+						</pre>
 					</li>
-				</ul>
-				<p class="grey-text text-lighten-4">Amrani Houssain amranidev@gmail.com</p>
-			</div>
-			<div class="col l4 offset-l2 s12">
-				<h5 class="white-text">Connect</h5>
+					<li>
+						<p>Update Composer :</p>
+						<pre><code><span class="hljs-title">composer</span> update
+					</code></pre>
+				</li>
+				<li>
+					<p>Add the service provider to config/app.php :</p>
+					<pre>
+					<code>
+Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
+Amranidev\Ajaxis\AjaxisServiceProvider::class,
+				</code>
+				</pre>
+			</li>
+			<li>
+				<p>Publish assets in your application with :
+				<code>$ php artisan vendor:publish</code></p>
+			</li>
+			<li>
+				<p>Migrate scaffoldinterface :
+				<code>$ php artisan migrate</code></p>
+				<p>Congratulations, you have successfully installed Scaffold Interface!</p>
+			</li>
+		</ol>
+	</div>
+</div>
+<footer class="page-footer #212121 grey darken-4">
+	<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">Projects</h5>
 				<ul>
-					<li><a class="grey-text text-lighten-3" href="#!"><a class="twitter-follow-button"
-						href="https://twitter.com/amranidev">
-					Follow @Amranidev</a></a></li>
-					<li><a class="grey-text text-lighten-3" href="#!"><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&type=follow&count=false" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></a></li>
-				</ul>
-			</div>
-		</div>
+					<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/ajaxis">
+						<ul>
+							<h6>Ajaxis</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=ajaxis&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+						</ul>
+					</a>
+				</li>
+				<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/scaffold-interface">
+					<ul>
+						<h6>Scaffold-Interface</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=scaffold-interface&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+					</ul>
+				</a>
+			</li>
+		</ul>
+		<p class="grey-text text-lighten-4">Amrani Houssain amranidev@gmail.com</p>
 	</div>
-	<div class="footer-copyright">
-		<div class="container">
-			© 2016 Copyright
-			<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-		</div>
+	<div class="col l4 offset-l2 s12">
+		<h5 class="white-text">Connect</h5>
+		<ul>
+			<li><a class="grey-text text-lighten-3" href="#!"><a class="twitter-follow-button"
+				href="https://twitter.com/amranidev">
+			Follow @Amranidev</a></a></li>
+			<li><a class="grey-text text-lighten-3" href="#!"><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&type=follow&count=false" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></a></li>
+		</ul>
 	</div>
+</div>
+</div>
+<div class="footer-copyright">
+<div class="container">
+	© 2016 Copyright
+	<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+</div>
+</div>
 </footer>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
