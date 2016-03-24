@@ -43,12 +43,10 @@
 					<li>
 						<p>Add scaffold-interface to your composer.json file to require Scaffold-Interface :</p>
 						<pre>
-
 require: {
    "laravel/framework": "5.2.*",
   "Amranidev/scaffold-interface": "v1.3.*"
    }
-
 						</pre>
 					</li>
 					<li>
@@ -59,61 +57,76 @@ require: {
 				<li>
 					<p>Add the service provider to config/app.php :</p>
 					<pre>
-					<code>
+						<code>
 Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
 Amranidev\Ajaxis\AjaxisServiceProvider::class,
-				</code>
-				</pre>
-			</li>
-			<li>
-				<p>Publish assets in your application with :
-				<code>$ php artisan vendor:publish</code></p>
-			</li>
-			<li>
-				<p>Migrate scaffoldinterface :
-				<code>$ php artisan migrate</code></p>
-				<p>Congratulations, you have successfully installed Scaffold Interface!</p>
-			</li>
-		</ol>
+						</code>
+					</pre>
+				</li>
+				<li>
+					<p>Publish assets in your application with :
+					<code>$ php artisan vendor:publish</code></p>
+				</li>
+				<li>
+					<p>Migrate scaffoldinterface :
+					<code>$ php artisan migrate</code></p>
+					<p>Congratulations, you have successfully installed Scaffold Interface!</p>
+				</li>
+			</ol>
+			<h3 id="usage" class = 'thin'>Usage</h3>
+			<p>the scaffold-interface have a lot features that save a tons of time for you and for your projects development life-cycle.</p>
+			<p>and remember this, Time equals money. </p>
+			<h4 id="scaffolding" class = 'thin'>Scaffolding</h4>
+			<ol>
+				<li><p>Access to scaffold interface :</p>
+				<p>http://{your-project}/scaffold to get into scaffoldinterface.</p></li>
+				<li><p>Table creation :</p>
+				<p>Create your table, you can specify many of attributes such like (String,date,longtext,etc.) </p></li>
+				<li><p>After creation :</p>
+				<p>To complete your scaffolding . go to your terminal and type.  </p>
+				<p><code>$ php artisan migrate</code></p></li>
+				<li><p>Finally :</p>
+				<p>Scaffolding it’s done. go to http://{your-project}/{your-model} </p></li>
+			</ol>
+		</div>
 	</div>
-</div>
-<footer class="page-footer #212121 grey darken-4">
-	<div class="container">
-		<div class="row">
-			<div class="col l6 s12">
-				<h5 class="white-text">Projects</h5>
-				<ul>
-					<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/ajaxis">
+	<footer class="page-footer #212121 grey darken-4">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Projects</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/ajaxis">
+							<ul>
+								<h6>Ajaxis</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=ajaxis&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+							</ul>
+						</a>
+					</li>
+					<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/scaffold-interface">
 						<ul>
-							<h6>Ajaxis</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=ajaxis&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+							<h6>Scaffold-Interface</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=scaffold-interface&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
 						</ul>
 					</a>
 				</li>
-				<li><a class="grey-text text-lighten-3" href="https://github.com/amranidev/scaffold-interface">
-					<ul>
-						<h6>Scaffold-Interface</h6><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&repo=scaffold-interface&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-					</ul>
-				</a>
-			</li>
-		</ul>
-		<p class="grey-text text-lighten-4">Amrani Houssain amranidev@gmail.com</p>
+			</ul>
+			<p class="grey-text text-lighten-4">Amrani Houssain amranidev@gmail.com</p>
+		</div>
+		<div class="col l4 offset-l2 s12">
+			<h5 class="white-text">Connect</h5>
+			<ul>
+				<li><a class="grey-text text-lighten-3" href="#!"><a class="twitter-follow-button"
+					href="https://twitter.com/amranidev">
+				Follow @Amranidev</a></a></li>
+				<li><a class="grey-text text-lighten-3" href="#!"><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&type=follow&count=false" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></a></li>
+			</ul>
+		</div>
 	</div>
-	<div class="col l4 offset-l2 s12">
-		<h5 class="white-text">Connect</h5>
-		<ul>
-			<li><a class="grey-text text-lighten-3" href="#!"><a class="twitter-follow-button"
-				href="https://twitter.com/amranidev">
-			Follow @Amranidev</a></a></li>
-			<li><a class="grey-text text-lighten-3" href="#!"><iframe src="https://ghbtns.com/github-btn.html?user=amranidev&type=follow&count=false" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></a></li>
-		</ul>
-	</div>
-</div>
 </div>
 <div class="footer-copyright">
-<div class="container">
-	© 2016 Copyright
-	<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-</div>
+	<div class="container">
+		© 2016 Copyright
+		<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+	</div>
 </div>
 </footer>
 </body>
