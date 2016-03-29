@@ -32,7 +32,7 @@
 				<h1><a id="Scaffoldinterface_0"></a>Scaffold-interface</h1>
 				<p>Welcome to the scaffold-interface documentation. This is a work in progress and will be continuously updated. Pull requests are welcome so if you would like to contribute, <a href="https://github.com/amranidev/scaffold-interface">please fork me on GitHub</a>.</p>
 				<h3 class = 'thin'><a id="What_is_scaffoldinterface_5"></a>What is scaffold-interface</h3>
-				<p>scaffold-interface is a smart CRUD generator for Laravel that generate your models,views,controllers and One-To-Many relationships just in few clicks. with elegant design and template specification for views.</p>
+				<p>Scaffold-interface is a smart CRUD generator for Laravel that generate your models,views,controllers and One-To-Many relationships just in few clicks. with elegant design and template specification for views.</p>
 				<h3 class = 'thin'><a id="Requirements_9"></a>Requirements</h3>
 				<ul>
 					<li>php  &gt;=  5.5.0</li>
@@ -42,12 +42,13 @@
 				<ol>
 					<li>
 						<p>Add scaffold-interface to your composer.json file to require Scaffold-Interface :</p>
-						<pre>
+						<pre>							
+							<code>							
 require: {
    "laravel/framework": "5.2.*",
-  "Amranidev/scaffold-interface": "v1.3.*"
-   }
-						</pre>
+   "Amranidev/scaffold-interface": "v1.3.*"
+}</code>
+						</pre>				
 					</li>
 					<li>
 						<p>Update Composer :</p>
@@ -55,7 +56,7 @@ require: {
 					</code></pre>
 				</li>
 				<li>
-					<p>Add the service provider to config/app.php :</p>
+					<p>Add the service providers to config/app.php :</p>
 					<pre>
 						<code>
 Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
@@ -64,7 +65,7 @@ Amranidev\Ajaxis\AjaxisServiceProvider::class,
 					</pre>
 				</li>
 				<li>
-					<p>Publish assets in your application with :
+					<p>Publish the assets in your application with :
 					<code>$ php artisan vendor:publish</code></p>
 				</li>
 				<li>
@@ -74,7 +75,7 @@ Amranidev\Ajaxis\AjaxisServiceProvider::class,
 				</li>
 			</ol>
 			<h3 id="usage" class = 'thin'>Usage</h3>
-			<p>the scaffold-interface have a lot features that save a tons of time for you and for your projects development life-cycle.</p>
+			<p>The scaffold-interface have a lot features that save a tons of time for you and for your projects development life-cycle.</p>
 			<p>and remember this, Time equals money. </p>
 			<h4 id="scaffolding" class = 'thin'>Scaffolding</h4>
 			<ol>
@@ -87,6 +88,10 @@ Amranidev\Ajaxis\AjaxisServiceProvider::class,
 				<p><code>$ php artisan migrate</code></p></li>
 				<li><p>Finally :</p>
 				<p>Scaffolding it’s done. go to http://{your-project}/{your-model} </p></li>
+				<li><p>Rollback :</p>
+				<p>If you want to rollback the table just check this:</p>
+				<p><img src="http://i.imgur.com/dnYc2ZE.png" alt="Imgur" title=""></p>
+				<p><blockquote> Before you make your rollback make sure that you have rolled back your table in the database.</blockquote></p></li>
 			</ol>
 		</div>
 	</div>
