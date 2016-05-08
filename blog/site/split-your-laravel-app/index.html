@@ -151,7 +151,7 @@
             <div class="col-md-9" role="main">
 
 <h1 id="split-your-laravel-app">Split your laravel app</h1>
-<p>Sometimes you work on laravel app project, the app get much bigger by the time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we soak in redundancy.</p>
+<p>Sometimes you work on laravel app project, the app get much bigger by time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we stuck in redundancy.</p>
 <p>It's difficult to maintain all your bussiness logic behind the scence.</p>
 <p>Thats why your app deserve to be splitted into packages/modules.</p>
 <p>So you can split your modules by creating your packages into your app by yourselves, or 
@@ -163,7 +163,7 @@ it recomended to use one of these packages.</p>
 </ul>
 <h3 id="implementation">Implementation</h3>
 <p>In this example we're going to use <a href="https://github.com/amranidev/lpackager">Lpackager</a></p>
-<p>Lpackager propose a simple way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.</p>
+<p>Lpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.</p>
 <p><code>php artisan make:package &lt;PackageName&gt; &lt;Path&gt; &lt;"NameSpace"&gt;</code></p>
 <h4 id="file-structure">File Structure</h4>
 <pre><code> PackageName
@@ -188,13 +188,13 @@ it recomended to use one of these packages.</p>
 </code></pre>
 
 <p>After <strong>Lpackager</strong> installation, lets create our first package via an artisan command : </p>
-<p><code>php artisan make:package Client kernel "Kernel\Client"</code>    </p>
+<p><code>php artisan make:package Client kernel "Kernel\Client"</code></p>
 <blockquote>
 <p>Note: See Lpackager <a href="https://github.com/amranidev/lpackager#ii-quick-start">Quick start</a></p>
 </blockquote>
 <h4 id="generate-your-modelmigrationcontroller">Generate Your (Model,Migration,Controller)</h4>
 <p>All right, Now our <strong>Client</strong> package was created and registred.</p>
-<p>Check if evreything is ok : <code>http://{your-project-url}/Client</code>  </p>
+<p>Check if evreything is okey : <code>http://{your-project-url}/Client</code>.  </p>
 <p>Lests generate Model,Migration,Controller.</p>
 <ol>
 <li>

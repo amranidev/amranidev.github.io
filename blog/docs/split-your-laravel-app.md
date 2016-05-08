@@ -1,6 +1,6 @@
 # Split your laravel app
 
-Sometimes you work on laravel app project, the app get much bigger by the time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we soak in redundancy.
+Sometimes you work on laravel app project, the app get much bigger by time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we stuck in redundancy.
 
 It's difficult to maintain all your bussiness logic behind the scence.
 
@@ -17,7 +17,7 @@ it recomended to use one of these packages.
 
 In this example we're going to use [Lpackager](https://github.com/amranidev/lpackager)
 
-Lpackager propose a simple way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.
+Lpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.
 
 `php artisan make:package <PackageName> <Path> <"NameSpace">`
 
@@ -45,7 +45,7 @@ Lpackager propose a simple way to generate your modules/packages simply without 
 ```
 After **Lpackager** installation, lets create our first package via an artisan command : 
 
-`php artisan make:package Client kernel "Kernel\Client"`	
+`php artisan make:package Client kernel "Kernel\Client"`
 
 > Note: See Lpackager [Quick start](https://github.com/amranidev/lpackager#ii-quick-start)
 
@@ -53,7 +53,7 @@ After **Lpackager** installation, lets create our first package via an artisan c
 
 All right, Now our **Client** package was created and registred.
 
-Check if evreything is ok : `http://{your-project-url}/Client`  
+Check if evreything is okey : `http://{your-project-url}/Client`.  
 
 Lests generate Model,Migration,Controller.
 
