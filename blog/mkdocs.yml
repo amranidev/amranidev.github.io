@@ -6,7 +6,7 @@ theme: flatly
 pages:
 - Home: 'index.md'
 - Blog: 
-    - 'Split your laravel app': 'index.md'
+    - 'Split your laravel app': 'split-your-laravel-app.md'
     - 'How to use ajaxis': 'index.md'
 - Project:
     - 'Scaffold-interface': 'scaffold-interface.md'
