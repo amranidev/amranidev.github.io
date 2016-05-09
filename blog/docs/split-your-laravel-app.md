@@ -6,7 +6,7 @@ It's difficult to maintain all your bussiness logic behind the scence.
 
 Thats why your app deserve to be splitted into packages/modules.
 
-So you can split your modules by creating your packages into your app by yourselves, or 
+So you can split modules by creating packages into your app by yourselves, or 
 it recomended to use one of these packages.
 
  * [Lpackager](https://github.com/amranidev/lpackager) 
@@ -19,7 +19,7 @@ In this example we're going to use [Lpackager](https://github.com/amranidev/lpac
 
 Lpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.
 
-`php artisan make:package <PackageName> <Path> <"NameSpace">`
+`php artisan lpackager:package <PackageName> <Path> <"NameSpace">`
 
 #### File Structure
 ```
@@ -45,7 +45,7 @@ Lpackager propose a way to generate your modules/packages simply without forgeti
 ```
 After **Lpackager** installation, lets create our first package via an artisan command : 
 
-`php artisan make:package Client kernel "Kernel\Client"`
+`php artisan lpackager:package Client kernel "Kernel\Client"`
 
 > Note: See Lpackager [Quick start](https://github.com/amranidev/lpackager#ii-quick-start)
 
@@ -59,7 +59,7 @@ Lests generate Model,Migration,Controller.
 
  1. Generate Model
 	
-    Generate Person model : `php artisan make:model Person --path=kernel/Client/src`
+    Generate Person model : `php artisan lpackager:model Person --path=kernel/Client/src`
  	
  	don't forget to change **Peson.php** NameSpace to *Kernel\Client*
 
@@ -67,10 +67,10 @@ Lests generate Model,Migration,Controller.
 	
 	Generate Person migration : `php artisan make:migration persons --path=kernel/Client/database/migrations`
 	
-	don't forget to change **Peson.php** NameSpace to *Kernel\Client\database*
+	don't forget to change **Person.php** NameSpace to *Kernel\Client\database*
 
  3. Generate Controller 
 
-    Generate PersonController :`php artisan make:controller`
+    Generate PersonController :`php artisan lpackager:controller PersonController Client Kernel/Client "Kernel\Client"`
 	
 	don't forget to change **Peson.php** NameSpace to *Kernel\Client*
