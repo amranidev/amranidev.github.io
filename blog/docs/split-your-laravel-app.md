@@ -15,7 +15,7 @@ it recomended to use one of these packages.
 
 ### Implementation
 
-In this example we're going to use [Lpackager](https://github.com/amranidev/lpackager)
+In this example we're going to use [Lpackager](https://github.com/amranidev/lpackager).
 
 Lpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.
 
@@ -59,26 +59,72 @@ Check if evreything is okey :
 
 Lests generate Model,Migration,Controller.
 
- 1. Generate Model
+<br />
+
+#### 1. Generate Model
 	
-    Generate Person model : 
+Generate Person model : 
 
-    `php artisan lpackager:model Person kernel/Person "Kernel\Person"`
- 	
- 	don't forget to change **Person.php** NameSpace to *Kernel\Client*
-
- 2. Generate Migration
+`php artisan lpackager:model Person kernel/Client "Kernel\Client"`
 	
-	Generate Person migration : 
+Result (kernel/Client/src/Person.php) :
 
-	`php artisan make:migration persons --path=kernel/Client/database/migrations`
+```php
+
+<?php
+
+namespace Kernel\Client\Http\Controllers
+
+use ClientAppController as Controller;
+
+class PersonController extends Controller
+{
+	public function index()
+	{
+		//
+	}
+}
+
+```
+
+<br />
+
+#### 2. Generate Migration
 	
-	don't forget to change **Person.php** NameSpace to *Kernel\Client\database*
+Generate Person migration : 
 
- 3. Generate Controller 
-
-    Generate PersonController :
-
-    `php artisan lpackager:controller PersonController Client Kernel/Client "Kernel\Client"`
+`php artisan make:migration persons --path=kernel/Client/database/migrations`
 	
-	don't forget to change **Peson.php** NameSpace to *Kernel\Client*
+don't forget to change MigrationClass NameSpace to *Kernel\Client\database*.
+
+<br />
+
+#### 3. Generate Controller 
+
+Generate PersonController :
+
+`php artisan lpackager:controller PersonController Client Kernel/Client "Kernel\Client"`
+
+Result (kernel/Client/src/Http/Controllers/PersonController.php) :
+
+```php
+
+<?php
+
+namespace Kernel\Client\Http\Controllers
+
+use ClientAppController as Controller;
+
+class PersonController extends Controller
+{
+	public function index()
+	{
+		//
+	}
+}
+
+```
+
+<br />
+
+Now we could create CRUD (Create,Read,Update,Delete) for *Person*, in the next article we're going to talk about how we could generate CRUD for packages, it will save a lot of time for us.
