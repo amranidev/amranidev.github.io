@@ -17,17 +17,17 @@
         }, 
         {
             "location": "/split-your-laravel-app/", 
-            "text": "Split your laravel app\n\n\nSometimes you work on a laravel app project, the app get much bigger by time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we stuck in redundancy.\n\n\nIt's difficult to maintain all your bussiness logic behind the scence.\n\n\nThats why your app deserve to be splitted into packages/modules.\n\n\nSo you can split modules by creating packages into your app by yourselves, or \nit recomended to use one of these packages.\n\n\n\n\nLpackager\n \n\n\nmodules\n\n\nlaravel-packager\n\n\n\n\nImplementation\n\n\nIn this example we're going to use \nLpackager\n\n\nLpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.\n\n\nphp artisan lpackager:package \nPackageName\n \nPath\n \n\"NameSpace\"\n\n\nFile Structure\n\n\n PackageName\n |\n |__config\n |  |__config.php\n |\n |__database\n |  |__migrations \n |\n |__resources\n |  |__views\n |     |__welcome.blade.php\n |\n |__src\n |  |__Http\n |  |  |__Controllers\n |  |  |  |__WelcomeController.php\n |  |  |__routes.php\n |  |__ServiceProvider.php              \n |\n\n\n\n\nAfter \nLpackager\n installation, lets create our first package via an artisan command : \n\n\nphp artisan lpackager:package Client kernel \"Kernel\\Client\"\n\n\n\n\nNote: See Lpackager \nQuick Start\n\n\n\n\nGenerate (Model,Migration,Controller)\n\n\nAll right, Now our \nClient\n package was created and registred.\n\n\nCheck if evreything is okey : \n\n\nhttp://{your-project-url}/Client\n  \n\n\nLests generate Model,Migration,Controller.\n\n\n\n\n\n\nGenerate Model\n\n\nGenerate Person model : \n\n\nphp artisan lpackager:model Person kernel/Person \"Kernel\\Person\"\n\n\ndon't forget to change \nPerson.php\n NameSpace to \nKernel\\Client\n\n\n\n\n\n\nGenerate Migration\n\n\nGenerate Person migration : \n\n\nphp artisan make:migration persons --path=kernel/Client/database/migrations\n\n\ndon't forget to change \nPerson.php\n NameSpace to \nKernel\\Client\\database\n\n\n\n\n\n\nGenerate Controller \n\n\nGenerate PersonController :\n\n\nphp artisan lpackager:controller PersonController Client Kernel/Client \"Kernel\\Client\"\n\n\ndon't forget to change \nPeson.php\n NameSpace to \nKernel\\Client", 
-            "title": "Split your laravel app"
+            "text": "Split laravel app\n\n\nSometimes you work on a laravel app project, the app get much bigger by time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we stuck in redundancy.\n\n\nIt's difficult to maintain all your bussiness logic behind the scence.\n\n\nThats why your app deserve to be splitted into packages/modules.\n\n\nSo you can split modules by creating packages into your app by yourselves, or \nit recomended to use one of these packages.\n\n\n\n\nLpackager\n \n\n\nmodules\n\n\nlaravel-packager\n\n\n\n\nImplementation\n\n\nIn this example we're going to use \nLpackager\n.\n\n\nLpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.\n\n\nphp artisan lpackager:package \nPackageName\n \nPath\n \n\"NameSpace\"\n\n\nFile Structure\n\n\n PackageName\n |\n |__config\n |  |__config.php\n |\n |__database\n |  |__migrations \n |\n |__resources\n |  |__views\n |     |__welcome.blade.php\n |\n |__src\n |  |__Http\n |  |  |__Controllers\n |  |  |  |__WelcomeController.php\n |  |  |__routes.php\n |  |__ServiceProvider.php              \n |\n\n\n\n\nAfter \nLpackager\n installation, lets create our first package via an artisan command : \n\n\nphp artisan lpackager:package Client kernel \"Kernel\\Client\"\n\n\n\n\nNote: See Lpackager \nQuick Start\n\n\n\n\nGenerate (Model,Migration,Controller)\n\n\nAll right, Now our \nClient\n package was created and registred.\n\n\nCheck if evreything is okey : \n\n\nhttp://{your-project-url}/Client\n  \n\n\nLests generate Model,Migration,Controller.\n\n\n\n\n1. Generate Model\n\n\nGenerate Person model : \n\n\nphp artisan lpackager:model Person kernel/Client \"Kernel\\Client\"\n\n\nResult (kernel/Client/src/Person.php) :\n\n\n\n\n?php\n\nnamespace Kernel\\Client\\Http\\Controllers\n\nuse ClientAppController as Controller;\n\nclass PersonController extends Controller\n{\n    public function index()\n    {\n        //\n    }\n}\n\n\n\n\n\n\n\n2. Generate Migration\n\n\nGenerate Person migration : \n\n\nphp artisan make:migration persons --path=kernel/Client/database/migrations\n\n\ndon't forget to change MigrationClass NameSpace to \nKernel\\Client\\database\n.\n\n\n\n\n3. Generate Controller\n\n\nGenerate PersonController :\n\n\nphp artisan lpackager:controller PersonController Client Kernel/Client \"Kernel\\Client\"\n\n\nResult (kernel/Client/src/Http/Controllers/PersonController.php) :\n\n\n\n\n?php\n\nnamespace Kernel\\Client\\Http\\Controllers\n\nuse ClientAppController as Controller;\n\nclass PersonController extends Controller\n{\n    public function index()\n    {\n        //\n    }\n}\n\n\n\n\n\n\n\nNow we could create CRUD for \nPerson\n, in the next article we're going to talk about how we could generate CRUD for packages, it will save a lot of time for us.", 
+            "title": "Split laravel app"
         }, 
         {
-            "location": "/split-your-laravel-app/#split-your-laravel-app", 
+            "location": "/split-your-laravel-app/#split-laravel-app", 
             "text": "Sometimes you work on a laravel app project, the app get much bigger by time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we stuck in redundancy.  It's difficult to maintain all your bussiness logic behind the scence.  Thats why your app deserve to be splitted into packages/modules.  So you can split modules by creating packages into your app by yourselves, or \nit recomended to use one of these packages.   Lpackager    modules  laravel-packager", 
-            "title": "Split your laravel app"
+            "title": "Split laravel app"
         }, 
         {
             "location": "/split-your-laravel-app/#implementation", 
-            "text": "In this example we're going to use  Lpackager  Lpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.  php artisan lpackager:package  PackageName   Path   \"NameSpace\"", 
+            "text": "In this example we're going to use  Lpackager .  Lpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.  php artisan lpackager:package  PackageName   Path   \"NameSpace\"", 
             "title": "Implementation"
         }, 
         {
@@ -37,23 +37,23 @@
         }, 
         {
             "location": "/split-your-laravel-app/#generate-modelmigrationcontroller", 
-            "text": "All right, Now our  Client  package was created and registred.  Check if evreything is okey :   http://{your-project-url}/Client     Lests generate Model,Migration,Controller.    Generate Model  Generate Person model :   php artisan lpackager:model Person kernel/Person \"Kernel\\Person\"  don't forget to change  Person.php  NameSpace to  Kernel\\Client    Generate Migration  Generate Person migration :   php artisan make:migration persons --path=kernel/Client/database/migrations  don't forget to change  Person.php  NameSpace to  Kernel\\Client\\database    Generate Controller   Generate PersonController :  php artisan lpackager:controller PersonController Client Kernel/Client \"Kernel\\Client\"  don't forget to change  Peson.php  NameSpace to  Kernel\\Client", 
+            "text": "All right, Now our  Client  package was created and registred.  Check if evreything is okey :   http://{your-project-url}/Client     Lests generate Model,Migration,Controller.", 
             "title": "Generate (Model,Migration,Controller)"
         }, 
         {
-            "location": "/", 
-            "text": "Welcome to Amranidev Blog\n\n\nHi, my name is Amrani Houssain, I'm a web developer.\n\n\nHopefully you will enjoy reading my articles about PHP,Laravel,VueJs,Artificial intelligence and more.\n\n\nFollow Me\n\n\nTwitter :\n\n\n\nGitHub :", 
-            "title": "How to use ajaxis"
+            "location": "/split-your-laravel-app/#1-generate-model", 
+            "text": "Generate Person model :   php artisan lpackager:model Person kernel/Client \"Kernel\\Client\"  Result (kernel/Client/src/Person.php) :   ?php\n\nnamespace Kernel\\Client\\Http\\Controllers\n\nuse ClientAppController as Controller;\n\nclass PersonController extends Controller\n{\n    public function index()\n    {\n        //\n    }\n}", 
+            "title": "1. Generate Model"
         }, 
         {
-            "location": "/#welcome-to-amranidev-blog", 
-            "text": "Hi, my name is Amrani Houssain, I'm a web developer.  Hopefully you will enjoy reading my articles about PHP,Laravel,VueJs,Artificial intelligence and more.", 
-            "title": "Welcome to Amranidev Blog"
+            "location": "/split-your-laravel-app/#2-generate-migration", 
+            "text": "Generate Person migration :   php artisan make:migration persons --path=kernel/Client/database/migrations  don't forget to change MigrationClass NameSpace to  Kernel\\Client\\database .", 
+            "title": "2. Generate Migration"
         }, 
         {
-            "location": "/#follow-me", 
-            "text": "Twitter :  GitHub :", 
-            "title": "Follow Me"
+            "location": "/split-your-laravel-app/#3-generate-controller", 
+            "text": "Generate PersonController :  php artisan lpackager:controller PersonController Client Kernel/Client \"Kernel\\Client\"  Result (kernel/Client/src/Http/Controllers/PersonController.php) :   ?php\n\nnamespace Kernel\\Client\\Http\\Controllers\n\nuse ClientAppController as Controller;\n\nclass PersonController extends Controller\n{\n    public function index()\n    {\n        //\n    }\n}   Now we could create CRUD for  Person , in the next article we're going to talk about how we could generate CRUD for packages, it will save a lot of time for us.", 
+            "title": "3. Generate Controller"
         }, 
         {
             "location": "/scaffold-interface/", 
