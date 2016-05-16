@@ -153,26 +153,29 @@
             <div class="col-md-9" role="main">
 
 <h1 id="crud-generator-for-packages">CRUD generator for packages</h1>
-<p>Previously, we've covered how to split a laravel app into packages/modules, and create <strong>Client</strong> package in our application include <strong>Person</strong> model,Migration and Controller.</p>
+<p>Previously, we've covered how to split a laravel app into packages/modules, and create <strong>Client</strong> package which include <strong>Person</strong> model,Migration and Controller.</p>
 <p>See <a href="https://amranidev.github.io/blog/site/split-your-laravel-app/">Split laravel app</a>.</p>
-<p>Allright, we could create CRUD for <strong>Person</strong> include views and controller functionalities, but all we need is a shortcut to generate crud faster for our package.</p>
+<p>Allright, we can create CRUD for <strong>Person</strong> that include views and controller functionalities, but all we need is a shortcut to generate crud faster for our package.</p>
 <p>in this example we're going to use scaffold-interface <a href="https://github.com/amranidev/scaffold-interface">(scaffold-interface)</a></p>
-<p>Scaffold-interface is a smart CRUD generator for laravel <a href="https://github.com/amranidev/scaffold-interface">(scaffold-interface)</a> that allows you to generate model,view and controller just in few clicks without waste a lot of time creating views,controllers and routes, how cool is that, right??</p>
+<p>Scaffold-interface is a smart CRUD generator for laravel <a href="https://github.com/amranidev/scaffold-interface">(scaffold-interface)</a> that allows you to generate model,views and controller just in few clicks.</p>
 <h2 id="implementation">Implementation</h2>
 <p>Well, after <strong>scaffold-interface</strong> installation, we've to remove our last class and resources of <strong>Person</strong>, and recreateing it with scaffold-interface.</p>
-<p>As you can see <strong>scaffold-interface</strong> has an config file <strong>config/amranidev/config.php</strong> that we must replace it with <strong>Client</strong> package config file <strong>kernel/Client/config/config.php</strong> to allows <strong>Scaffold-Interface</strong> interact with our package.</p>
+<p>As you can see <strong>scaffold-interface</strong> has an config file <strong>config/amranidev/config.php</strong> that we must replace it with <strong>Client</strong> package config file <strong>kernel/Client/config/config.php</strong> to allow <strong>Scaffold-Interface</strong> interact with our package.</p>
 <p><img alt="Screenshot" src="../img/config.png" /></p>
 <p><br></p>
-<p>Now lets create our first CRUD for our package, Access to the scaffold-interface <code>http://{your-project-url}/scaffold</code>.</p>
+<p>Now lets create our first CRUD for our package, go to <code>http://{your-project-url}/scaffold</code>.</p>
 <p><img alt="Screenshot" src="../img/scaffold1.png" /></p>
-<p>So as you can see scaffolder told us that we're working on <strong>Client</strong> package environment, so cretae your first table Person and just add your fields, then click on ready and done.</p>
+<p>So as you can see scaffolder told us that we're working on <strong>Client</strong> package environment, so cretae your first table <strong>Person</strong> and just add your fields, then click on ready and done.</p>
+<p>And don't forget to migrate schema.</p>
 <h2 id="finally">Finally</h2>
 <p>Congratulations, the <strong>Person</strong> CRUD has been generated into <strong>Client</strong> Package just in few seconds.</p>
 <blockquote>
 <p>NOTE : be aware about switching between packages, and save scaffold-interface laravel config environment somewhere in your project, to use it if necessary.</p>
 <p>NOTE : if you want to generate OneToMany relationships between two different packages,
 all you have to care about is the controller namespace, that can be a kind of troubleshooting.</p>
-</blockquote></div>
+</blockquote>
+<p><br></p>
+<p><a href="https://twitter.com/amranidev"><img alt="Twitter URL" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" /></a> <em>to Amrani Houssain</em>.</p></div>
         </div>
 
         <footer class="col-md-12">
