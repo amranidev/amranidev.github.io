@@ -162,6 +162,44 @@
 <p>Well, after <strong>scaffold-interface</strong> installation, we've to remove our last class and resources of <strong>Person</strong>, and recreateing it with scaffold-interface.</p>
 <p>As you can see <strong>scaffold-interface</strong> has an config file <strong>config/amranidev/config.php</strong> that we must replace it with <strong>Client</strong> package config file <strong>kernel/Client/config/config.php</strong> to allow <strong>Scaffold-Interface</strong> interact with our package.</p>
 <p><img alt="Screenshot" src="../img/config.png" /></p>
+<pre><code class="php">
+&lt;?php
+
+/*
+ |-------------------------------------------------------------------------
+ | Client config for scaffolding
+ |-------------------------------------------------------------------------
+ |
+ | You can replace this conf file with config/amranidev/config.php
+ | to let scaffold-interface intercat with &quot;Client&quot; package.
+ |
+ */
+return [
+
+        'package' =&gt; 'Client',
+
+        'model' =&gt; base_path() . '/kernel/Client/src',
+
+        'views' =&gt; base_path() . '/kernel/Client/resources/views',
+
+        'controller' =&gt; base_path() . '/kernel/Client/src/Http/Controllers',
+
+        'migration' =&gt; base_path() . '/kernel/Client/database/migrations',
+
+        'database' =&gt; '/kernel/Client/database/migrations',
+
+        'routes' =&gt; base_path() . '/kernel/Client/src/Http/routes.php',
+
+        'controllerNameSpace' =&gt; 'Kernel\Client\\Http\\Controllers',
+
+        'modelNameSpace' =&gt; 'Kernel\Client',
+
+        'loadViews' =&gt; 'Client',
+
+       ];
+
+</code></pre>
+
 <p><br></p>
 <p>Now lets create our first CRUD for our package, go to <code>http://{your-project-url}/scaffold</code>.</p>
 <p><img alt="Screenshot" src="../img/scaffold1.png" /></p>
@@ -169,6 +207,7 @@
 <p>And don't forget to migrate schema.</p>
 <h2 id="finally">Finally</h2>
 <p>Congratulations, the <strong>Person</strong> CRUD has been generated into <strong>Client</strong> Package just in few seconds.</p>
+<p><br></p>
 <blockquote>
 <p>NOTE : be aware about switching between packages, and save scaffold-interface laravel config environment somewhere in your project, to use it if necessary.</p>
 <p>NOTE : if you want to generate OneToMany relationships between two different packages,
