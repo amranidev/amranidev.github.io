@@ -207,16 +207,13 @@ it recomended to use one of these packages.</p>
 <pre><code class="php">
 &lt;?php
 
-namespace Kernel\Client\Http\Controllers
+namespace Kernel\Client;
 
-use ClientAppController as Controller;
+use Illuminate\Database\Eloquent\Model;
 
-class PersonController extends Controller
+class Person extends Model
 {
-    public function index()
-    {
-        //
-    }
+    //
 }
 
 </code></pre>
