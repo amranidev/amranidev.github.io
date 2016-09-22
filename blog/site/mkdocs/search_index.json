@@ -82,13 +82,28 @@
         }, 
         {
             "location": "/scaffold-interface/", 
-            "text": "Scaffold-Interface", 
+            "text": "Scaffold-Interface (full documentation page)\n\n\nOverview\n\n\nThe scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with user management system using spatie \nspatie\n.\n\n\nFeatures\n\n\n\n\n\n\nGenerate your model,views,controller and migrations just in a few clicks.\n\n\n\n\n\n\nViews support Bootstrap and Materializecss.\n\n\n\n\n\n\nGenerate OneToMany relationships including views and controllers.\n\n\n\n\n\n\nGenerate ManyToMany relationships.\n\n\n\n\n\n\nWebsocket using \nPusher Notifications\n.\n\n\n\n\n\n\nAdminLTE dashboard template with users management system (users-roles-permissions) using \nlaravel-permission\n.\n\n\n\n\n\n\nSoftdeletes and timestamps.\n\n\n\n\n\n\nA delete confirmation message.\n\n\n\n\n\n\nUsing an interface to design your table.\n\n\n\n\n\n\nRollbacking possibility.\n\n\n\n\n\n\nGenerate CRUD for packages, see \nLpackager\n, \nCRUD for packages/modules\n.\n\n\n\n\n\n\nRequires\n\n\n\n\nPHP \n=5.6", 
             "title": "Scaffold-interface"
         }, 
         {
-            "location": "/scaffold-interface/#scaffold-interface", 
+            "location": "/scaffold-interface/#scaffold-interface-full-documentation-page", 
             "text": "", 
-            "title": "Scaffold-Interface"
+            "title": "Scaffold-Interface (full documentation page)"
+        }, 
+        {
+            "location": "/scaffold-interface/#overview", 
+            "text": "The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with user management system using spatie  spatie .", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/scaffold-interface/#features", 
+            "text": "Generate your model,views,controller and migrations just in a few clicks.    Views support Bootstrap and Materializecss.    Generate OneToMany relationships including views and controllers.    Generate ManyToMany relationships.    Websocket using  Pusher Notifications .    AdminLTE dashboard template with users management system (users-roles-permissions) using  laravel-permission .    Softdeletes and timestamps.    A delete confirmation message.    Using an interface to design your table.    Rollbacking possibility.    Generate CRUD for packages, see  Lpackager ,  CRUD for packages/modules .", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/scaffold-interface/#requires", 
+            "text": "PHP  =5.6", 
+            "title": "Requires"
         }, 
         {
             "location": "/ajaxis/", 
