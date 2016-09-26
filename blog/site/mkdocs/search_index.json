@@ -82,7 +82,7 @@
         }, 
         {
             "location": "/scaffold-interface/", 
-            "text": "Scaffold-Interface (full documentation page)\n\n\nOverview\n\n\nThe scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with user management system using spatie \nspatie\n.\n\n\nFeatures\n\n\n\n\n\n\nGenerate your model,views,controller and migrations just in a few clicks.\n\n\n\n\n\n\nViews support Bootstrap and Materializecss.\n\n\n\n\n\n\nGenerate OneToMany relationships including views and controllers.\n\n\n\n\n\n\nGenerate ManyToMany relationships.\n\n\n\n\n\n\nWebsocket using \nPusher Notifications\n.\n\n\n\n\n\n\nAdminLTE dashboard template with users management system (users-roles-permissions) using \nlaravel-permission\n.\n\n\n\n\n\n\nSoftdeletes and timestamps.\n\n\n\n\n\n\nA delete confirmation message.\n\n\n\n\n\n\nUsing an interface to design your table.\n\n\n\n\n\n\nRollbacking possibility.\n\n\n\n\n\n\nGenerate CRUD for packages, see \nLpackager\n, \nCRUD for packages/modules\n.\n\n\n\n\n\n\nRequires\n\n\n\n\nPHP \n=5.6", 
+            "text": "Scaffold-Interface (full documentation page)\n\n\nOverview\n\n\nThe scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with a user management system using \nspatie\n.\n\n\nFeatures\n\n\n\n\n\n\nGenerate your model,views,controller and migrations just in a few clicks.\n\n\n\n\n\n\nViews support Bootstrap and Materializecss.\n\n\n\n\n\n\nGenerate OneToMany relationships including views and controllers.\n\n\n\n\n\n\nGenerate ManyToMany relationships.\n\n\n\n\n\n\nWebsocket using \nPusher Notifications\n.\n\n\n\n\n\n\nAdminLTE dashboard template with users management system (users-roles-permissions) using \nlaravel-permission\n.\n\n\n\n\n\n\nSoftdeletes and timestamps.\n\n\n\n\n\n\nA delete confirmation message.\n\n\n\n\n\n\nUsing an interface to design your table.\n\n\n\n\n\n\nRollbacking possibility.\n\n\n\n\n\n\nGenerate CRUD for packages, see \nLpackager\n, \nCRUD for packages/modules\n.\n\n\n\n\n\n\nRequires\n\n\n\n\nPHP \n=5.6\n\n\n\n\nConfiguration\n\n\nThis package has been supported for laravel v5.1, v5.2 and v5.3\n\n\n\n\n\n\n\n\nLaravel version\n\n\nScaffold-Interface version\n\n\n\n\n\n\n\n\n\n\nv5.1\n\n\nv1.4.11 or less\n\n\n\n\n\n\nv5.2 and v5.3\n\n\nv1.5.*\n\n\n\n\n\n\n\n\nI. Package installation\n\n\nRun composer require to install Scaffold-Interface:\n\n\nAdd the package to your dependencies in composer.json:\n\n\nrequire : {\n\nAmranidev/scaffold-interface\n: \nv1.5.*\n\n}\n\n\n\n\nThen update composer:\n\n\n$ composer update\n\n\n\n\nAdd the service providers to config/app.php:\n\n\nAmranidev\\ScaffoldInterface\\ScaffoldInterfaceServiceProvider::class,\nAmranidev\\Ajaxis\\AjaxisServiceProvider::class,\nSpatie\\Permission\\PermissionServiceProvider::class,\n\n\n\n\nPublish the assets in your application with:\n\n\n$ php artisan vendor:publish\n\n\n\n\n\n\nWhat does this package publishes:\n\n\napp/Http/Controllers/UserController.php\n\n\napp/Http/Controllers/RoleController.php\n\n\napp/Http/Controllers/PermissionController.php\n\n\nresources/views/scaffold-interface\n\n\npublic/js/scaffold-interface-js\n\n\npublic/css/scaffold-interface-css\n\n\nconfig/amranidev/config.php\n\n\ndatabase/migrations/migration_file\n\n\n\n\n\n\n\n\nMigrate for the Scaffold Interface table:\n\n\n$ php artisan migrate\n\n\n\n\nAuth scaffolding:\n\n\n$ php artisan make:auth\n\n\n\n\nCongratulations, you have successfully installed Scaffold Interface!\n\n\nII. Usage\n\n\nTo get access to the interface go to : \nhttp://{your-project-url}/scaffold\n.\n\n\n\n\nClick on new table button and start fill fields, then click on ready and done.\n\n\n\n\nYou have successfully created your entity.\n\n\n\n\nTo migrate your schema just click on migrate button.\n\n\n\n\nWell now you can start usign your entity.\n\n\nTo rollback your entity just rollback its table from database by clicking on rollback button first, then click on delete button to be deleted form your app.\n\n\nIII. Relationships\n\n\n1. OneToMany\n\n\nThis package provides a simple short way to generate OneToMany relationship.\n\n\nWe could use our previous example \nProduct\n entity.\n\n\nSo lets create a new entity called \nCommand\n.\n\n\nBefore ending creation, click on OneToMany button, choose product table, choose associated filed and \nclick on OneToMany Button again to be confirmed\n.   \n\n\n\n\nThis will create \nmodel with relation methods ,views, controller and migration file contains foreignkeys\n, for sure you can change whatever you want.\n\n\nThen click on migration button.\n\n\n\n\n2. ManyToMany\n\n\nTo generate ManyToMany relationship between tow tables, click on ManyToMany button, chosse tables from combobox then click on create.\n\n\nWell, this will create a new pivot table schema ready to be migrated, adding ManyToMany raltionship methods to models.\n\n\nThis doesn't create views,controllers and routes, because we belive that evrey web artisan has his own unique methodology.\n\n\n\n\nIII. Controle Panel AdminLTE\n\n\nScaffold-interface provids a simple controle panel contains user managment system using spatie package so menage your users-roles-permissions easily.\n\n\nGo a head to terminal and create a new user.\n\n\n$ php artisan tinker\n:\n\n\n$user = new \\App\\User();\n$user-\nname = \njohn doe\n;\n$user-\nemail = \njhondoe@example.com\n;\n$user-\npassword = Hash::make(\npassword\n);\n$user-\nsave();\n\n\n\n\nAdd HasRole dependency to app/User.php:\n\n\nuse Illuminate\\Foundation\\Auth\\User as Authenticatable;\nuse Spatie\\Permission\\Traits\\HasRoles;\n\nclass User extends Authenticatable\n{\n  use HasRoles;\n\n  // ...\n}\n\n\n\n\nThen click on dashboard button and login.", 
             "title": "Scaffold-interface"
         }, 
         {
@@ -92,7 +92,7 @@
         }, 
         {
             "location": "/scaffold-interface/#overview", 
-            "text": "The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with user management system using spatie  spatie .", 
+            "text": "The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with a user management system using  spatie .", 
             "title": "Overview"
         }, 
         {
@@ -104,6 +104,41 @@
             "location": "/scaffold-interface/#requires", 
             "text": "PHP  =5.6", 
             "title": "Requires"
+        }, 
+        {
+            "location": "/scaffold-interface/#configuration", 
+            "text": "This package has been supported for laravel v5.1, v5.2 and v5.3     Laravel version  Scaffold-Interface version      v5.1  v1.4.11 or less    v5.2 and v5.3  v1.5.*", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/scaffold-interface/#i-package-installation", 
+            "text": "Run composer require to install Scaffold-Interface:  Add the package to your dependencies in composer.json:  require : { Amranidev/scaffold-interface :  v1.5.* \n}  Then update composer:  $ composer update  Add the service providers to config/app.php:  Amranidev\\ScaffoldInterface\\ScaffoldInterfaceServiceProvider::class,\nAmranidev\\Ajaxis\\AjaxisServiceProvider::class,\nSpatie\\Permission\\PermissionServiceProvider::class,  Publish the assets in your application with:  $ php artisan vendor:publish   What does this package publishes:  app/Http/Controllers/UserController.php  app/Http/Controllers/RoleController.php  app/Http/Controllers/PermissionController.php  resources/views/scaffold-interface  public/js/scaffold-interface-js  public/css/scaffold-interface-css  config/amranidev/config.php  database/migrations/migration_file     Migrate for the Scaffold Interface table:  $ php artisan migrate  Auth scaffolding:  $ php artisan make:auth  Congratulations, you have successfully installed Scaffold Interface!", 
+            "title": "I. Package installation"
+        }, 
+        {
+            "location": "/scaffold-interface/#ii-usage", 
+            "text": "To get access to the interface go to :  http://{your-project-url}/scaffold .   Click on new table button and start fill fields, then click on ready and done.   You have successfully created your entity.   To migrate your schema just click on migrate button.   Well now you can start usign your entity.  To rollback your entity just rollback its table from database by clicking on rollback button first, then click on delete button to be deleted form your app.", 
+            "title": "II. Usage"
+        }, 
+        {
+            "location": "/scaffold-interface/#iii-relationships", 
+            "text": "", 
+            "title": "III. Relationships"
+        }, 
+        {
+            "location": "/scaffold-interface/#1-onetomany", 
+            "text": "This package provides a simple short way to generate OneToMany relationship.  We could use our previous example  Product  entity.  So lets create a new entity called  Command .  Before ending creation, click on OneToMany button, choose product table, choose associated filed and  click on OneToMany Button again to be confirmed .      This will create  model with relation methods ,views, controller and migration file contains foreignkeys , for sure you can change whatever you want.  Then click on migration button.", 
+            "title": "1. OneToMany"
+        }, 
+        {
+            "location": "/scaffold-interface/#2-manytomany", 
+            "text": "To generate ManyToMany relationship between tow tables, click on ManyToMany button, chosse tables from combobox then click on create.  Well, this will create a new pivot table schema ready to be migrated, adding ManyToMany raltionship methods to models.  This doesn't create views,controllers and routes, because we belive that evrey web artisan has his own unique methodology.", 
+            "title": "2. ManyToMany"
+        }, 
+        {
+            "location": "/scaffold-interface/#iii-controle-panel-adminlte", 
+            "text": "Scaffold-interface provids a simple controle panel contains user managment system using spatie package so menage your users-roles-permissions easily.  Go a head to terminal and create a new user.  $ php artisan tinker :  $user = new \\App\\User();\n$user- name =  john doe ;\n$user- email =  jhondoe@example.com ;\n$user- password = Hash::make( password );\n$user- save();  Add HasRole dependency to app/User.php:  use Illuminate\\Foundation\\Auth\\User as Authenticatable;\nuse Spatie\\Permission\\Traits\\HasRoles;\n\nclass User extends Authenticatable\n{\n  use HasRoles;\n\n  // ...\n}  Then click on dashboard button and login.", 
+            "title": "III. Controle Panel AdminLTE"
         }, 
         {
             "location": "/ajaxis/", 

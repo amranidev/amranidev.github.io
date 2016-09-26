@@ -149,6 +149,16 @@
         
             <li><a href="#requires">Requires</a></li>
         
+            <li><a href="#configuration">Configuration</a></li>
+        
+            <li><a href="#i-package-installation">I. Package installation</a></li>
+        
+            <li><a href="#ii-usage">II. Usage</a></li>
+        
+            <li><a href="#iii-relationships">III. Relationships</a></li>
+        
+            <li><a href="#iii-controle-panel-adminlte">III. Controle Panel AdminLTE</a></li>
+        
     
     </ul>
 </div></div>
@@ -156,7 +166,7 @@
 
 <h2 id="scaffold-interface-full-documentation-page">Scaffold-Interface (full documentation page)</h2>
 <h3 id="overview">Overview</h3>
-<p>The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with user management system using spatie <a href="https://www.github.com">spatie</a>.</p>
+<p>The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with a user management system using <a href="https://www.github.com">spatie</a>.</p>
 <h3 id="features">Features</h3>
 <ul>
 <li>
@@ -196,7 +206,121 @@
 <h3 id="requires">Requires</h3>
 <ul>
 <li>PHP &gt;=5.6</li>
-</ul></div>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<p>This package has been supported for laravel v5.1, v5.2 and v5.3</p>
+<table>
+<thead>
+<tr>
+<th>Laravel version</th>
+<th>Scaffold-Interface version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v5.1</td>
+<td>v1.4.11 or less</td>
+</tr>
+<tr>
+<td>v5.2 and v5.3</td>
+<td>v1.5.*</td>
+</tr>
+</tbody>
+</table>
+<h3 id="i-package-installation">I. Package installation</h3>
+<p>Run composer require to install Scaffold-Interface:</p>
+<p>Add the package to your dependencies in composer.json:</p>
+<pre><code class="json">require : {
+&quot;Amranidev/scaffold-interface&quot;: &quot;v1.5.*&quot;
+}
+</code></pre>
+
+<p>Then update composer:</p>
+<pre><code>$ composer update
+</code></pre>
+
+<p>Add the service providers to config/app.php:</p>
+<pre><code class="php">Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
+Amranidev\Ajaxis\AjaxisServiceProvider::class,
+Spatie\Permission\PermissionServiceProvider::class,
+</code></pre>
+
+<p>Publish the assets in your application with:</p>
+<pre><code>$ php artisan vendor:publish
+</code></pre>
+
+<ul>
+<li>What does this package publishes:<ul>
+<li>app/Http/Controllers/UserController.php</li>
+<li>app/Http/Controllers/RoleController.php</li>
+<li>app/Http/Controllers/PermissionController.php</li>
+<li>resources/views/scaffold-interface</li>
+<li>public/js/scaffold-interface-js</li>
+<li>public/css/scaffold-interface-css</li>
+<li>config/amranidev/config.php</li>
+<li>database/migrations/migration_file</li>
+</ul>
+</li>
+</ul>
+<p>Migrate for the Scaffold Interface table:</p>
+<pre><code>$ php artisan migrate
+</code></pre>
+
+<p>Auth scaffolding:</p>
+<pre><code>$ php artisan make:auth
+</code></pre>
+
+<p>Congratulations, you have successfully installed Scaffold Interface!</p>
+<h3 id="ii-usage">II. Usage</h3>
+<p>To get access to the interface go to : <code>http://{your-project-url}/scaffold</code>.</p>
+<p><img alt="Screenshot" src="../img/doc1.png" /></p>
+<p>Click on new table button and start fill fields, then click on ready and done.</p>
+<p><img alt="Screenshot" src="../img/doc2.png" /></p>
+<p>You have successfully created your entity.</p>
+<p><img alt="screenshot" src="../img/doc3.png" /></p>
+<p>To migrate your schema just click on migrate button.</p>
+<p><img alt="screenshot" src="../img/doc4.png" /></p>
+<p>Well now you can start usign your entity.</p>
+<p>To rollback your entity just rollback its table from database by clicking on rollback button first, then click on delete button to be deleted form your app.</p>
+<h3 id="iii-relationships">III. Relationships</h3>
+<h4 id="1-onetomany">1. OneToMany</h4>
+<p>This package provides a simple short way to generate OneToMany relationship.</p>
+<p>We could use our previous example <code>Product</code> entity.</p>
+<p>So lets create a new entity called <code>Command</code>.</p>
+<p>Before ending creation, click on OneToMany button, choose product table, choose associated filed and <strong>click on OneToMany Button again to be confirmed</strong>.   </p>
+<p><img alt="Screenshot" src="../img/doc5.png" /></p>
+<p>This will create <strong>model with relation methods ,views, controller and migration file contains foreignkeys</strong>, for sure you can change whatever you want.</p>
+<p>Then click on migration button.</p>
+<p><img alt="Screenshot" src="../img/doc6.png" /></p>
+<h4 id="2-manytomany">2. ManyToMany</h4>
+<p>To generate ManyToMany relationship between tow tables, click on ManyToMany button, chosse tables from combobox then click on create.</p>
+<p>Well, this will create a new pivot table schema ready to be migrated, adding ManyToMany raltionship methods to models.</p>
+<p>This doesn't create views,controllers and routes, because we belive that evrey web artisan has his own unique methodology.</p>
+<p><img alt="Screenshot" src="../img/doc7.png" /></p>
+<h3 id="iii-controle-panel-adminlte">III. Controle Panel AdminLTE</h3>
+<p>Scaffold-interface provids a simple controle panel contains user managment system using spatie package so menage your users-roles-permissions easily.</p>
+<p>Go a head to terminal and create a new user.</p>
+<p><code>$ php artisan tinker</code>:</p>
+<pre><code>$user = new \App\User();
+$user-&gt;name = &quot;john doe&quot;;
+$user-&gt;email = &quot;jhondoe@example.com&quot;;
+$user-&gt;password = Hash::make(&quot;password&quot;);
+$user-&gt;save();
+</code></pre>
+
+<p>Add HasRole dependency to app/User.php:</p>
+<pre><code class="php">use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+  use HasRoles;
+
+  // ...
+}
+</code></pre>
+
+<p>Then click on dashboard button and login.</p></div>
         </div>
 
         <footer class="col-md-12">
