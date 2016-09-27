@@ -168,20 +168,17 @@
 
 <h2 id="scaffold-interface-full-documentation-page">Scaffold-Interface (full documentation page)</h2>
 <h3 id="overview">Overview</h3>
-<p>The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving a lot of times, with a powerful CRUD generator with relationships (ManyToMany, OneToMany), also an admin controle panel with a user management system using <a href="https://www.github.com/spatie/laravel-permission">laravel-permission</a>.</p>
+<p>The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving you a lot of times, thanks to a powerful CRUD generator with relationships (ManyToMany, OneToMany), and an admin control panel with a user management system using <a href="https://www.github.com/spatie/laravel-permission">laravel-permission</a>.</p>
 <h3 id="features">Features</h3>
 <ul>
 <li>
-<p>Generate your model,views,controller and migrations just in a few clicks.</p>
+<p>Generate your models,views,controllers and migrations just in a few clicks.</p>
 </li>
 <li>
 <p>Views support Bootstrap and Materializecss.</p>
 </li>
 <li>
-<p>Generate OneToMany relationships including views and controllers.</p>
-</li>
-<li>
-<p>Generate ManyToMany relationships.</p>
+<p>Generate (OneToMany,ManyToMany) relationships including views and controllers.</p>
 </li>
 <li>
 <p>Websocket using <a href="https://www.github.com/pusher">Pusher Notifications</a>.</p>
@@ -199,7 +196,7 @@
 <p>Using an interface to design your table.</p>
 </li>
 <li>
-<p>Rollbacking possibility.</p>
+<p>Rollback possibility.</p>
 </li>
 <li>
 <p>Generate CRUD for packages, see <a href="https://github.com/amranidev/lpackager">Lpackager</a>, <a href="http://amranidev.github.io/blog/site/crud-generator-for-packages/">CRUD for packages/modules</a>.</p>
@@ -210,7 +207,7 @@
 <li>PHP &gt;=5.6</li>
 </ul>
 <h3 id="configuration">Configuration</h3>
-<p>This package has been supported for laravel v5.1, v5.2 and v5.3</p>
+<p>Laravel supported versions.</p>
 <table>
 <thead>
 <tr>
@@ -283,7 +280,7 @@ Spatie\Permission\PermissionServiceProvider::class,
 <p>To migrate your schema just click on migrate button.</p>
 <p><img alt="screenshot" src="../img/doc4.png" /></p>
 <p>Well now you can start usign your entity.</p>
-<p>To rollback your entity just rollback its table from database by clicking on rollback button first, then click on delete button to be deleted form your app.</p>
+<p>To rollback your entity just rollback its table from database clicking on rollback button first, then click on delete button to be deleted form your app.</p>
 <h3 id="iii-relationships">III. Relationships</h3>
 <h4 id="1-onetomany">1. OneToMany</h4>
 <p>This package provides a simple short way to generate OneToMany relationship.</p>
@@ -297,7 +294,7 @@ Spatie\Permission\PermissionServiceProvider::class,
 <h4 id="2-manytomany">2. ManyToMany</h4>
 <p>To generate ManyToMany relationship between tow tables, click on ManyToMany button, chosse tables from combobox then click on create.</p>
 <p>Well, this will create a new pivot table schema ready to be migrated, adding ManyToMany raltionship methods to models.</p>
-<p>This doesn't create views,controllers and routes, because we belive that evrey web artisan has his own unique methodology.</p>
+<p>This doesn't create views,controllers and routes, because we belive that each web artisan has his own unique methodology.</p>
 <p><img alt="Screenshot" src="../img/doc7.png" /></p>
 <h3 id="iii-controle-panel-adminlte">III. Controle Panel AdminLTE</h3>
 <p>Scaffold-interface provids a simple controle panel contains user managment system using <a href="https://github.com/spatie/laravel-permission">laravel-permission</a> package so menage users-roles-permissions easily.</p>
