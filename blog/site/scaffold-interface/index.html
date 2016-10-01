@@ -167,6 +167,7 @@
             <div class="col-md-9" role="main">
 
 <h2 id="scaffold-interface-full-documentation-page">Scaffold-Interface (full documentation page)</h2>
+<p><img alt="Scaffold" src="http://i.imgur.com/65uhrP7.gif" /></p>
 <h3 id="overview">Overview</h3>
 <p>The scaffold-interface is a pakcage builds for laravel web framework that allows you to develop your web project faster and easier saving you a lot of times, thanks to a powerful CRUD generator with relationships (ManyToMany, OneToMany), and an admin control panel with a user management system using <a href="https://www.github.com/spatie/laravel-permission">laravel-permission</a>.</p>
 <h3 id="features">Features</h3>
@@ -181,7 +182,7 @@
 <p>Generate (OneToMany,ManyToMany) relationships including views and controllers.</p>
 </li>
 <li>
-<p>Websocket using <a href="https://www.github.com/pusher">Pusher Notifications</a>.</p>
+<p>Websockets using <a href="https://www.github.com/pusher">Pusher Notifications</a>.</p>
 </li>
 <li>
 <p>AdminLTE dashboard template with users management system (users-roles-permissions) using <a href="https://github.com/spatie/laravel-permission">laravel-permission</a>.</p>
@@ -228,7 +229,7 @@
 </table>
 <h4 id="laravel-v53">Laravel v5.3.*</h4>
 <p>Make sure that <strong>routes path is configured.</strong></p>
-<p>Go to <strong>config/amranidev/config.php</strong>, and change routes to <strong>'routes' =&gt; base_path().'/routes/web.php',</strong></p>
+<p>Go to <strong>config/amranidev/config.php</strong>, and change routes to <strong>'routes' =&gt; base_path('routes/web.php')</strong></p>
 <h3 id="i-package-installation">I. Package installation</h3>
 <p>Run composer require to install Scaffold-Interface:</p>
 <p>Add the package to your dependencies in composer.json:</p>
@@ -245,6 +246,7 @@
 <pre><code class="php">Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
 Amranidev\Ajaxis\AjaxisServiceProvider::class,
 Spatie\Permission\PermissionServiceProvider::class,
+Vinkla\Pusher\PusherServiceProvider::class,
 </code></pre>
 
 <p>Publish the assets in your application with:</p>
@@ -274,16 +276,24 @@ Spatie\Permission\PermissionServiceProvider::class,
 
 <p>Congratulations, you have successfully installed Scaffold Interface!</p>
 <h3 id="ii-usage">II. Usage</h3>
-<p>To get access to the interface go to : <code>http://{your-project-url}/scaffold</code>.</p>
+<ul>
+<li>To get access to the interface go to : <code>http://{your-project-url}/scaffold</code>.</li>
+</ul>
 <p><img alt="Screenshot" src="../img/doc1.png" /></p>
-<p>Click on new table button and start fill fields, then click on ready and done.</p>
+<ul>
+<li>Click on new table button and start fill fields, then click on ready and done.</li>
+</ul>
 <p><img alt="Screenshot" src="../img/doc2.png" /></p>
 <p>You have successfully created your entity.</p>
 <p><img alt="screenshot" src="../img/doc3.png" /></p>
-<p>To migrate your schema just click on migrate button.</p>
+<ul>
+<li>To migrate your schema just click on migrate button.</li>
+</ul>
 <p><img alt="screenshot" src="../img/doc4.png" /></p>
 <p>Well now you can start usign your entity.</p>
-<p>To rollback your entity just rollback its table from database clicking on rollback button first, then click on delete button to be deleted form your app.</p>
+<ul>
+<li>To rollback your entity just rollback its table from database clicking on rollback button first, then click on delete button to be deleted form your app.</li>
+</ul>
 <h3 id="iii-relationships">III. Relationships</h3>
 <h4 id="1-onetomany">1. OneToMany</h4>
 <p>This package provides a simple short way to generate OneToMany relationship.</p>
@@ -301,7 +311,9 @@ Spatie\Permission\PermissionServiceProvider::class,
 <p><img alt="Screenshot" src="../img/doc7.png" /></p>
 <h3 id="iii-controle-panel-adminlte">III. Controle Panel AdminLTE</h3>
 <p>Scaffold-interface provids a simple controle panel contains user managment system using <a href="https://github.com/spatie/laravel-permission">laravel-permission</a> package so menage users-roles-permissions easily.</p>
-<p>Go a head to terminal and create a new user.</p>
+<ul>
+<li>Go a head to terminal and create a new user.</li>
+</ul>
 <p><code>$ php artisan tinker</code>:</p>
 <pre><code>$user = new \App\User();
 $user-&gt;name = &quot;john doe&quot;;
@@ -310,7 +322,9 @@ $user-&gt;password = Hash::make(&quot;password&quot;);
 $user-&gt;save();
 </code></pre>
 
-<p>Add HasRole dependency to app/User.php:</p>
+<ul>
+<li>Add HasRole dependency to app/User.php:</li>
+</ul>
 <pre><code class="php">use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -322,7 +336,9 @@ class User extends Authenticatable
 }
 </code></pre>
 
-<p>Then click on dashboard button and login.</p>
+<ul>
+<li>Then click on dashboard button and login.</li>
+</ul>
 <div class="thumbnail">
     <a href="../img/doc8.png"><img alt="" src="../img/doc8.png" /></a>
 </div>
@@ -340,11 +356,17 @@ class User extends Authenticatable
     </div>
 </div>
 
-<p>You can determine if a user has a certain role:</p>
+<ul>
+<li>You can determine if a user has a certain role:</li>
+</ul>
 <p><code>$user-&gt;hasRole('writer');</code></p>
-<p>You can also determine if a user has any of a given list of roles:</p>
+<ul>
+<li>You can also determine if a user has any of a given list of roles:</li>
+</ul>
 <p><code>$user-&gt;hasAnyRole(Role::all());</code></p>
-<p>You can determine if a role has a certain permission:</p>
+<ul>
+<li>You can determine if a role has a certain permission:</li>
+</ul>
 <p><code>$role-&gt;hasPermissionTo('edit articles');</code></p>
 <p>Want more ? check <a href="https://github.com/spatie/laravel-permission">laravel-permission</a>.</p>
 <h3 id="iv-pusher-notifications">IV. Pusher Notifications</h3>
@@ -385,7 +407,7 @@ PUSHER_SECRET = your_secret
 <p>By default <strong>Scaffold-Interface</strong> used <strong>test-channel</strong> as a <strong>channel</strong> and <strong>test-event</strong> as an <strong>event</strong></p>
 <h4 id="backend">Backend</h4>
 <p>So when you create a new entity, the package creates back-end pusher notification code automatically behind the scenes.</p>
-<p>Check the <strong>Entity Controller</strong>, we took our previous example entity <strong>Product</strong>.</p>
+<p>Check the <strong>Entity Controller</strong>, we took our previous example, <strong>Product</strong> entity.</p>
 <p><img alt="Screenshot" src="../img/doc11.png" /></p>
 <h4 id="frontend">Frontend</h4>
 <p>The fornt end code was already defined in <strong>resources/views/scaffold-interface/layouts/app.blade.php</strong>.</p></div>
