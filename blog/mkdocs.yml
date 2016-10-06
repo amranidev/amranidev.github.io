@@ -8,6 +8,7 @@ pages:
 - Blog: 
     - 'Split laravel app': 'split-your-laravel-app.md'
     - 'CRUD for packages': 'crud-generator-for-packages.md'
+    - 'Singletone Pattern' : 'singletone.md'
 - Project:
     - 'Scaffold-interface': 'scaffold-interface.md'
     - 'Ajaxis': 'ajaxis.md'

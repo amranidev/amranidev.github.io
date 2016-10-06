@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Split laravel app - Amranidev Blog</title>
+	<title>Singletone Pattern - Amranidev Blog</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -61,8 +61,8 @@
                     <ul class="dropdown-menu">
                     
                         
-<li class="active">
-    <a href="./">Split laravel app</a>
+<li >
+    <a href="../split-your-laravel-app/">Split laravel app</a>
 </li>
 
                     
@@ -73,8 +73,8 @@
 
                     
                         
-<li >
-    <a href="../singletone/">Singletone Pattern</a>
+<li class="active">
+    <a href="./">Singletone Pattern</a>
 </li>
 
                     
@@ -119,12 +119,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="..">
+                    <a rel="next" href="../crud-generator-for-packages/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../crud-generator-for-packages/">
+                    <a rel="prev" href="../scaffold-interface/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -147,115 +147,103 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#split-laravel-app">Split laravel app</a></li>
+        <li class="main active"><a href="#design-patterns-in-php-singletone">Design Patterns in PHP (Singletone)</a></li>
+        
+            <li><a href="#uses">Uses</a></li>
+        
+            <li><a href="#rules">Rules</a></li>
         
             <li><a href="#implementation">Implementation</a></li>
         
-            <li><a href="#finally">Finally</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="split-laravel-app">Split laravel app</h1>
-<p>Sometimes you work on a laravel app project, the app get much bigger by time, especially when it contains a lot of dependencies between modules, and you remind that each module might be splitted or you deserve to make an app for each module, the last one is not a good way because we stuck in redundancy.</p>
-<p>It's difficult to maintain all your bussiness logic behind the scence.</p>
-<p>Thats why your app deserve to be splitted into packages/modules.</p>
-<p>So you can split modules by creating packages into your app by yourselves, or 
-it recomended to use one of these packages.</p>
+<h3 id="design-patterns-in-php-singletone">Design Patterns in PHP (Singletone)</h3>
+<p>In software engineering, the singleton pattern is a design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system. The concept is sometimes generalized to systems that operate more efficiently when only one object exists, or that restrict the instantiation to a certain number of objects. The term comes from the mathematical concept of a singleton. (<a href="https://en.wikipedia.org/wiki/Singleton_pattern">Wikipedia</a>)</p>
+<h4 id="uses">Uses</h4>
 <ul>
-<li><a href="https://github.com/amranidev/lpackager">Lpackager</a> </li>
-<li><a href="https://github.com/caffeinated/modules">modules</a></li>
-<li><a href="https://github.com/Jeroen-G/laravel-packager">laravel-packager</a></li>
+<li>
+<p>The abstract factory, builder, and prototype patterns can use Singletons in their implementation.</p>
+</li>
+<li>
+<p>Facade objects are often singletons because only one Facade object is required.</p>
+</li>
+<li>
+<p>State objects are often singletons.</p>
+</li>
 </ul>
-<h3 id="implementation">Implementation</h3>
-<p>In this example we're going to use <a href="https://github.com/amranidev/lpackager">Lpackager</a>.</p>
-<p>Lpackager propose a way to generate your modules/packages simply without forgeting MVC laravel structure via an artisan command.</p>
-<p><code>php artisan lpackager:package &lt;PackageName&gt; &lt;Path&gt; &lt;"NameSpace"&gt;</code></p>
-<h4 id="file-structure">File Structure</h4>
-<pre><code> PackageName
- |
- |__config
- |  |__config.php
- |
- |__database
- |  |__migrations 
- |
- |__resources
- |  |__views
- |     |__welcome.blade.php
- |
- |__src
- |  |__Http
- |  |  |__Controllers
- |  |  |  |__WelcomeController.php
- |  |  |__routes.php
- |  |__ServiceProvider.php              
- |
-</code></pre>
+<h4 id="rules">Rules</h4>
+<ol>
+<li>
+<p>Declaring all constructors of the class to be <strong>private</strong>.</p>
+</li>
+<li>
+<p>Providing a static method that returns a reference to the instance.</p>
+</li>
+</ol>
+<h4 id="implementation">Implementation</h4>
+<p>An implementation of the singleton pattern must:</p>
+<p>Ensure that only one instance of the singleton class ever exists, and provide global access to that instance.</p>
+<p>So lets say that we need to create an database class that can return only a one instance.</p>
+<pre><code>&lt;?php
 
-<p>After <strong>Lpackager</strong> installation, lets create our first package via an artisan command : </p>
-<p><code>php artisan lpackager:package Client kernel "Kernel\Client"</code></p>
-<blockquote>
-<p>Note: See Lpackager <a href="https://github.com/amranidev/lpackager#ii-quick-start">Quick Start</a></p>
-</blockquote>
-<h4 id="generate-modelmigrationcontroller">Generate (Model,Migration,Controller)</h4>
-<p>All right, Now our <strong>Client</strong> package was created and registred.</p>
-<p>Check if evreything is okey : </p>
-<p><code>http://{your-project-url}/Client</code>  </p>
-<p>Lests generate Model,Migration,Controller.</p>
-<p><br /></p>
-<h4 id="1-generate-model">1. Generate Model</h4>
-<p>Generate Person model : </p>
-<p><code>php artisan lpackager:model Person kernel/Client "Kernel\Client"</code></p>
-<p>Result (kernel/Client/src/Person.php) :</p>
-<pre><code class="php">
-&lt;?php
-
-namespace Kernel\Client;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Person extends Model
+class Database
 {
-    //
-}
+    /**
+     * Database Instance.
+     * 
+     * @static $instance
+     */ 
+    public static $instance = null;
 
-</code></pre>
+    /**
+     * Database Constructor
+     */ 
+    private function __construct()
+    {}
 
-<p><br /></p>
-<h4 id="2-generate-migration">2. Generate Migration</h4>
-<p>Generate Person migration : </p>
-<p><code>php artisan make:migration persons --path=kernel/Client/database/migrations</code></p>
-<p>don't forget to change MigrationClass NameSpace to <em>Kernel\Client\database</em>.</p>
-<p><br /></p>
-<h4 id="3-generate-controller">3. Generate Controller</h4>
-<p>Generate PersonController :</p>
-<p><code>php artisan lpackager:controller PersonController Client Kernel/Client "Kernel\Client"</code></p>
-<p>Result (kernel/Client/src/Http/Controllers/PersonController.php) :</p>
-<pre><code class="php">
-&lt;?php
-
-namespace Kernel\Client\Http\Controllers
-
-use ClientAppController as Controller;
-
-class PersonController extends Controller
-{
-    public function index()
+    /**
+     * Get Database instance
+     * 
+     * @return self
+     */ 
+    public static function getInstance()
     {
-        //
+        if (!self::$instance)
+        self::$instance = new self();
+
+        return self::$instance;
     }
+
+    /**
+     * Database clone
+     */ 
+    private function __clone()
+    {}
 }
 
+///Testing some calls to that class
+$instance_1 = Database::getInstance();
+var_dump($instance_1);
+
+$instance_2 = Database::getInstance();
+var_dump($instance_2);
 </code></pre>
 
-<p><br /></p>
-<h2 id="finally">Finally</h2>
-<p>Now we could create CRUD for <em>Person</em>, in the next article we're going to talk about how we could generate CRUD for packages, it will save a lot of time for us.</p>
-<p><br></p>
-<p><a href="https://twitter.com/amranidev"><img alt="Twitter URL" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" /></a> <em>to Amrani Houssain</em>.  </p></div>
+<p>Result : </p>
+<pre><code>class Database#1 (0) {
+}
+class Database#1 (0) {
+}
+</code></pre>
+
+<h4 id="conclusion">Conclusion</h4>
+<p>As you can see, we receive the same instance even when we try to call Database class twice.</p>
+<p>In the singleton pattern a class can distribute one instance of itself to other classes.</p></div>
         </div>
 
         <footer class="col-md-12">
